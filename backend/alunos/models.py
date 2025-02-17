@@ -13,7 +13,7 @@ class Professor(models.Model):
     email = models.EmailField()
 
     def __str__(self):
-        return f'{self.nome}  -  {self.disciplina}  -  {self.email}'
+        return f'{self.nome} - {self.disciplina} - {self.email}'
     
 class Turma(models.Model):
     id = models.AutoField(primary_key=True)
@@ -22,7 +22,7 @@ class Turma(models.Model):
     horario = models.TimeField()
 
     def __str__(self):
-        return f'{self.nome}  -  {self.id_professor.nome}  -  {self.horario}'
+        return f'{self.nome} - {self.id_professor.nome} - {self.horario}'
     
 class Aluno(models.Model):
     id = models.AutoField(primary_key=True)
@@ -32,4 +32,4 @@ class Aluno(models.Model):
     id_turma = models.ForeignKey('Turma', on_delete=models.PROTECT)
 
     def __str__(self):
-        return f'{self.nome}  -  {self.matricula}  -  {self.curso}'
+        return f'{self.nome} - {self.matricula} - {self.curso} -  {self.id_turma.nome}'
