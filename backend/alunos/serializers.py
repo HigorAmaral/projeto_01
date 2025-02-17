@@ -1,7 +1,18 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Estado
+from .models import Professor, Turma, Aluno
 
-class EstadoSerializer(ModelSerializer):
+class ProfessorSerializer(ModelSerializer):
     class Meta:
-        model = Estado
+        model = Professor
+        fields = '__all__'
+
+
+class TurmaSerializer(ModelSerializer):
+    class Meta:
+        model = Turma
+        fields = '__all__'
+
+class AlunoSerializer(ModelSerializer):
+    class Meta:
+        model = Aluno
         fields = '__all__'
